@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Shield } from 'lucide-react';
-import { clsx } from 'clsx';
+import clsx from "clsx";
 
 const NAV_LINKS = [
   { label: 'How It Works', href: '#roles' },
