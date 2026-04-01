@@ -1,16 +1,12 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+// import { Route, Routes } from 'react-router-dom'
+import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from './pages/Landing'
 
 export default function App() {
-  return(
-    <>
-    <BrowserRouter>
+  return (
     <Routes>
-        <Route path="/" element={<Landing/>} />
-        {/* <Route path="/" element={} /> */}
+      <Route path="/" element={<Landing />} />
+      {/* <Route path="/" element={} /> */}
     </Routes>
-    </BrowserRouter>
-    
-    </>
   )
 }

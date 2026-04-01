@@ -1,13 +1,25 @@
+import Navbar from "../components/landing/Navbar";
+import Footer from "../components/landing/Footer"
+import Hero from "../components/landing/Hero";
+import StatsSection from "../components/landing/StatsSection";
+import RolesSection from "../components/landing/RolesSection";
+import ComplexitySection from "../components/landing/ComplexitySection";
+import NetworkSection from "../components/landing/NetworkSection";
+import CTASection from "../components/landing/CTASection";
+
 export default function Landing() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 p-8">
-      <div className="mx-auto max-w-5xl space-y-6">
-        <header className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">PharmaTrack</p>
-          <h1 className="text-3xl font-bold">Supply chain tracking dashboard</h1>
-          <p className="text-slate-600">Replace this landing content with your real UI.</p>
-        </header>
-      </div>
-    </main>
-  )
+    <div className="min-h-screen bg-[#0a0f0a] text-white">
+      <Navbar/>
+      <main>
+        <Hero />
+        <StatsSection />
+        <RolesSection />
+        <ComplexitySection />
+        <NetworkSection />
+        <CTASection />
+      </main>
+      <Footer />
+    </div>
+  );
 }
