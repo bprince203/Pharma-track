@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "echo \"add eslint later\""
+    "lint": "echo \"add eslint later\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "axios": "^1.14.0",
@@ -19,10 +20,14 @@
     "react-router-dom": "^7.13.2"
   },
   "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^5.2.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.14",
+    "typescript": "^5.9.3",
     "vite": "^5.4.10"
   }
 }
