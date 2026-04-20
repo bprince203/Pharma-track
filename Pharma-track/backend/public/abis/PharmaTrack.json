@@ -1,0 +1,1104 @@
+{
+    "abi":  [
+                {
+                    "inputs":  [
+
+                               ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "constructor"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "AccessControlBadConfirmation",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "neededRole",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "AccessControlUnauthorizedAccount",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "BatchAlreadyExists",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "BatchNotFound",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "EnforcedPause",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "ExpectedPause",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "expiryDate",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "ExpiryInPast",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "requested",
+                                       "type":  "uint256"
+                                   },
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "available",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "InsufficientTablets",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "InvalidAmount",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "caller",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "holder",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "NotStripHolder",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "ReentrancyGuardReentrantCall",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "stripId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "StripAlreadyExists",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "stripId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "StripNotFound",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "tokenId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "TokenAlreadyExists",
+                    "type":  "error"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "tokenId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "TokenNotFound",
+                    "type":  "error"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "address",
+                                       "name":  "manufacturer",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "uint256",
+                                       "name":  "timestamp",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "BatchRegistered",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "address",
+                                       "name":  "from",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "address",
+                                       "name":  "to",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "string",
+                                       "name":  "role",
+                                       "type":  "string"
+                                   }
+                               ],
+                    "name":  "BatchTransferred",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "Paused",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "previousAdminRole",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "newAdminRole",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "RoleAdminChanged",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "address",
+                                       "name":  "sender",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "RoleGranted",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "address",
+                                       "name":  "sender",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "RoleRevoked",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "tokenId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "bytes32",
+                                       "name":  "stripId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "uint256",
+                                       "name":  "tabletsSold",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "SaleTokenCreated",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  true,
+                                       "internalType":  "bytes32",
+                                       "name":  "stripId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "uint256",
+                                       "name":  "stripNumber",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "StripRegistered",
+                    "type":  "event"
+                },
+                {
+                    "anonymous":  false,
+                    "inputs":  [
+                                   {
+                                       "indexed":  false,
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "Unpaused",
+                    "type":  "event"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "DEFAULT_ADMIN_ROLE",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "",
+                                        "type":  "bytes32"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "DISTRIBUTOR_ROLE",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "",
+                                        "type":  "bytes32"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "MANUFACTURER_ROLE",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "",
+                                        "type":  "bytes32"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "PHARMACY_ROLE",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "",
+                                        "type":  "bytes32"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "wallet",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "assignRole",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "batchExists",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "batches",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "batchId",
+                                        "type":  "bytes32"
+                                    },
+                                    {
+                                        "internalType":  "string",
+                                        "name":  "medicineName",
+                                        "type":  "string"
+                                    },
+                                    {
+                                        "internalType":  "address",
+                                        "name":  "manufacturer",
+                                        "type":  "address"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "manufactureDate",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "expiryDate",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "totalStrips",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "isActive",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "stripId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "tabletsSold",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "generateSaleToken",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "tokenId",
+                                        "type":  "bytes32"
+                                    }
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "getBatchStrips",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32[]",
+                                        "name":  "",
+                                        "type":  "bytes32[]"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "getRoleAdmin",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "",
+                                        "type":  "bytes32"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "grantRole",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "hasRole",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "pause",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "paused",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "string",
+                                       "name":  "medicineName",
+                                       "type":  "string"
+                                   },
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "expiryDate",
+                                       "type":  "uint256"
+                                   },
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "totalStrips",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "registerBatch",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "stripId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "stripNumber",
+                                       "type":  "uint256"
+                                   },
+                                   {
+                                       "internalType":  "uint256",
+                                       "name":  "tabletsTotal",
+                                       "type":  "uint256"
+                                   }
+                               ],
+                    "name":  "registerStrip",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "callerConfirmation",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "renounceRole",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "wallet",
+                                       "type":  "address"
+                                   },
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "revokeActorRole",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "role",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "account",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "revokeRole",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "saleTokens",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "tokenId",
+                                        "type":  "bytes32"
+                                    },
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "stripId",
+                                        "type":  "bytes32"
+                                    },
+                                    {
+                                        "internalType":  "address",
+                                        "name":  "pharmacy",
+                                        "type":  "address"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "tabletsSold",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "timestamp",
+                                        "type":  "uint256"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "stripExists",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "strips",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "stripId",
+                                        "type":  "bytes32"
+                                    },
+                                    {
+                                        "internalType":  "bytes32",
+                                        "name":  "batchId",
+                                        "type":  "bytes32"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "stripNumber",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "tabletsTotal",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "uint256",
+                                        "name":  "tabletsRemaining",
+                                        "type":  "uint256"
+                                    },
+                                    {
+                                        "internalType":  "address",
+                                        "name":  "currentHolder",
+                                        "type":  "address"
+                                    },
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "isActive",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes4",
+                                       "name":  "interfaceId",
+                                       "type":  "bytes4"
+                                   }
+                               ],
+                    "name":  "supportsInterface",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "tokenExists",
+                    "outputs":  [
+                                    {
+                                        "internalType":  "bool",
+                                        "name":  "",
+                                        "type":  "bool"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "distributor",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "transferToDistributor",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "batchId",
+                                       "type":  "bytes32"
+                                   },
+                                   {
+                                       "internalType":  "address",
+                                       "name":  "pharmacy",
+                                       "type":  "address"
+                                   }
+                               ],
+                    "name":  "transferToPharmacy",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+
+                               ],
+                    "name":  "unpause",
+                    "outputs":  [
+
+                                ],
+                    "stateMutability":  "nonpayable",
+                    "type":  "function"
+                },
+                {
+                    "inputs":  [
+                                   {
+                                       "internalType":  "bytes32",
+                                       "name":  "tokenId",
+                                       "type":  "bytes32"
+                                   }
+                               ],
+                    "name":  "verifyToken",
+                    "outputs":  [
+                                    {
+                                        "components":  [
+                                                           {
+                                                               "internalType":  "bytes32",
+                                                               "name":  "tokenId",
+                                                               "type":  "bytes32"
+                                                           },
+                                                           {
+                                                               "internalType":  "bytes32",
+                                                               "name":  "stripId",
+                                                               "type":  "bytes32"
+                                                           },
+                                                           {
+                                                               "internalType":  "address",
+                                                               "name":  "pharmacy",
+                                                               "type":  "address"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "tabletsSold",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "timestamp",
+                                                               "type":  "uint256"
+                                                           }
+                                                       ],
+                                        "internalType":  "struct PharmaTrack.SaleToken",
+                                        "name":  "",
+                                        "type":  "tuple"
+                                    },
+                                    {
+                                        "components":  [
+                                                           {
+                                                               "internalType":  "bytes32",
+                                                               "name":  "stripId",
+                                                               "type":  "bytes32"
+                                                           },
+                                                           {
+                                                               "internalType":  "bytes32",
+                                                               "name":  "batchId",
+                                                               "type":  "bytes32"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "stripNumber",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "tabletsTotal",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "tabletsRemaining",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "address",
+                                                               "name":  "currentHolder",
+                                                               "type":  "address"
+                                                           },
+                                                           {
+                                                               "internalType":  "bool",
+                                                               "name":  "isActive",
+                                                               "type":  "bool"
+                                                           }
+                                                       ],
+                                        "internalType":  "struct PharmaTrack.Strip",
+                                        "name":  "",
+                                        "type":  "tuple"
+                                    },
+                                    {
+                                        "components":  [
+                                                           {
+                                                               "internalType":  "bytes32",
+                                                               "name":  "batchId",
+                                                               "type":  "bytes32"
+                                                           },
+                                                           {
+                                                               "internalType":  "string",
+                                                               "name":  "medicineName",
+                                                               "type":  "string"
+                                                           },
+                                                           {
+                                                               "internalType":  "address",
+                                                               "name":  "manufacturer",
+                                                               "type":  "address"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "manufactureDate",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "expiryDate",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "uint256",
+                                                               "name":  "totalStrips",
+                                                               "type":  "uint256"
+                                                           },
+                                                           {
+                                                               "internalType":  "bool",
+                                                               "name":  "isActive",
+                                                               "type":  "bool"
+                                                           }
+                                                       ],
+                                        "internalType":  "struct PharmaTrack.Batch",
+                                        "name":  "",
+                                        "type":  "tuple"
+                                    }
+                                ],
+                    "stateMutability":  "view",
+                    "type":  "function"
+                }
+            ]
+}
