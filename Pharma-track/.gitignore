@@ -1,24 +1,47 @@
-# Logs
-logs
+# ─── Dependencies ────────────────────────────────────────────────
+node_modules/
+.pnp.*
+.yarn/
+
+# ─── Build output ────────────────────────────────────────────────
+dist/
+build/
+.next/
+
+# ─── Hardhat / Solidity ──────────────────────────────────────────
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+contracts/coverage/
+contracts/coverage.json
+
+# ─── Environment ─────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ─── IDE ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS files ────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Logs ────────────────────────────────────────────────────────
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ─── Testing ─────────────────────────────────────────────────────
+coverage/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# ─── Misc ────────────────────────────────────────────────────────
+*.tsbuildinfo
+deployments.json

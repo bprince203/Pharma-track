@@ -1,0 +1,20 @@
+{
+  "name": "veri-med",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Veri-Med — Blockchain-Powered Medicine Provenance Platform",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "compile": "cd contracts && npm run compile",
+    "test:contracts": "cd contracts && npm run test",
+    "deploy": "cd contracts && npm run deploy",
+    "deploy:local": "cd contracts && npm run deploy:local",
+    "seed": "cd contracts && npm run seed",
+    "db:migrate": "cd backend && npx drizzle-kit migrate",
+    "db:generate": "cd backend && npx drizzle-kit generate",
+    "db:studio": "cd backend && npx drizzle-kit studio",
+    "db:seed": "cd backend && npm run seed",
+    "typecheck": "cd backend && npm run typecheck && cd ../contracts && npm run typecheck"
+  }
+}
