@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Lock, Zap } from 'lucide-react';
+import { useAppStore } from '../../store/useAppStore';
 
 const TRUST_BADGES = [
   { icon: ShieldCheck, label: 'Audited Contracts' },
@@ -8,11 +9,21 @@ const TRUST_BADGES = [
 ];
 
 export default function CTASection() {
+  const { role, jwtToken } = useAppStore();
+  const navigate = useNavigate();
+
+  const handleLaunchApp = () => {
+    if (jwtToken && role) {
+      navigate(`/${role.toLowerCase()}`);
+    } else {
+      navigate('/onboarding');
+    }
+  };
+
   return (
     <section className="py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-950 via-slate-900 to-slate-950 border border-teal-500/20 px-8 py-20 text-center">
-          {/* Background glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-64 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
           <div className="relative max-w-2xl mx-auto">
@@ -27,11 +38,11 @@ export default function CTASection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link to="/manufacturer"
+              <button onClick={handleLaunchApp}
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-semibold text-white bg-teal-600 hover:bg-teal-500 rounded-xl transition-colors shadow-lg shadow-teal-900/50 group">
-                Launch App
+                {jwtToken && role ? 'Go to Dashboard' : 'Launch App'}
                 <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-              </Link>
+              </button>
               <Link to="/verify"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 text-base font-medium text-slate-200 border border-slate-700 hover:border-teal-500/50 hover:bg-teal-500/5 rounded-xl transition-all duration-150">
                 <ShieldCheck size={18} className="text-teal-400" />

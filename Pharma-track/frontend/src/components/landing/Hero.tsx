@@ -1,6 +1,7 @@
 import { ArrowRight, ShieldCheck, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import { useAppStore } from '../../store/useAppStore';
 
 function MoleculeSVG() {
   return (
@@ -38,6 +39,8 @@ function MoleculeSVG() {
 
 export default function Hero() {
   const hashRef = useRef(null);
+  const { role, jwtToken } = useAppStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const chars = '0123456789abcdef';
@@ -90,11 +93,11 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/manufacturer"
+            <button onClick={() => jwtToken && role ? navigate(`/${role.toLowerCase()}`) : navigate('/onboarding')}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-teal-600 hover:bg-teal-500 rounded-xl transition-colors shadow-lg shadow-teal-900/40 group">
-              Launch App
+              {jwtToken && role ? 'Go to Dashboard' : 'Launch App'}
               <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
+            </button>
             <Link to="/verify"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-medium text-slate-200 border border-slate-700 hover:border-teal-500/50 hover:bg-teal-500/5 rounded-xl transition-all duration-150">
               <ShieldCheck size={18} className="text-teal-400" />
